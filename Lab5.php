@@ -7,7 +7,7 @@ $conn = mysqli_connect("localhost", "root", "", "your_database_name");
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $name = $_POST['name'];
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
+    $password = $_POST['password']; // Hash the password
     $email = $_POST['email'];
 
     $sql = "INSERT INTO users (name, username, password, email) VALUES ('$name', '$username', '$password', '$email')";
